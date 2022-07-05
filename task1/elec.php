@@ -221,42 +221,28 @@
     ?>
     <div class="container">
         <form class="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <h1 class="text-center">Get Minimum and Maximum numbers</h1>
+            <h1 class="text-center">Calculate Electricity Bill</h1>
             <div class="mb-3">
-                <label for="firstNum" class="form-label">Enter Number</label>
-                <input type="number" class="form-control form-outline" id="firstNum" name="firstNum">
+                <label for="elecUni" class="form-label">Enter Electricity units</label>
+                <input type="number" class="form-control form-outline" id="elecUni" name="elecUni" />
             </div>
-            <div class="mb-3">
-                <label for="secondNum" class="form-label">Enter Number</label>
-                <input type="number" class="form-control form-outline" id="secondNum" name="secondNum">
-            </div>
-            <div class="mb-3">
-                <label for="thirdNum" class="form-label">Enter Number</label>
-                <input type="number" class="form-control form-outline" id="thirdNum" name="thirdNum">
-            </div>
-            <button type="submit" class="btn btn-primary">Click to Get Min and Max Number</button>
+            <button type="submit" class="btn btn-primary">Calculate</button>
             <?php
             // Check if user came through POST Method and entered all numbers
-            if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['firstNum'] && $_POST['secondNum'] . $_POST['thirdNum']) {
-                // Calculate the maximum number
-                $max = $_POST['firstNum'];
-                $min = $_POST['firstNum'];
-                $max = $max < $_POST['secondNum'] ? $max = $_POST['secondNum'] : $max = $max;
-                $max = $max < $_POST['thirdNum'] ? $max = $_POST['thirdNum'] : $max = $max;
-
-                $min = $min > $_POST['secondNum'] ? $min = $_POST['secondNum'] : $min = $min;
-                $min = $min > $_POST['thirdNum'] ? $min = $_POST['thirdNum'] : $min = $min;
-
-                echo "<div class=\"mt-5 d-flex justify-content-between\">
-                <div class=\"text-center\">
-                    <h5>Maximum Number</h5>
-                    <span>" . $max . "</span>
-                </div>
-                <div class=\"text-center\">
-                    <h5>Minimum Number</h5>
-                    <span>" . $min . "</span>
-                </div>
-            </div>";
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['elecUni']) {
+                $billValue = '';
+                if($_POST['elecUni'] >= 0 && $_POST['elecUni'] < 50){
+                    $billValue = $_POST['elecUni'] * 0.5;
+                }else if($_POST['elecUni'] >= 50 && $_POST['elecUni'] < 150) {
+                    $billValue = $_POST['elecUni'] * 0.75;
+                }else if($_POST['elecUni'] >= 150 && $_POST['elecUni'] < 250) {
+                    $billValue = $_POST['elecUni'] * 1.2;
+                }else if ($_POST['elecUni'] >= 250) {
+                    $billValue = $_POST['elecUni'] * 1.5;
+                }
+                // Add additional surcharge
+                $finalBill = $billValue + ($billValue * 0.2);
+                echo "<div>Total Electricty Bill = $billValue + " . $billValue * 0.2 . "(surcharge) = $finalBill LE</div>";
             }
             ?>
         </form>
