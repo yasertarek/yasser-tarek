@@ -2,32 +2,8 @@
 include_once "./includes/header.php";
 // Check if user is coming through a POST method, then show error and redirect to main page
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET) {
-    echo "<div class=\"popup\">
-        <h3>Error: 405 Method Not Allowed</h3>
-        <p>You tried to access page in illegal way and you'll be directed to right page after 5 seconds <a href=\"" . explode('?', $_SERVER["REQUEST_URI"])[0] . "\">click here to redirect now</a></p>
-        <div id=\"countdown\">
-            <div id=\"countdown-number\"></div>
-            <svg>
-                <circle r=\"18\" cx=\"20\" cy=\"20\"></circle>
-            </svg>
-        </div>
-    </div>
-    <div class=\"overlay\"></div>
-    <script>
-            let countdownNumberEl = document.getElementById('countdown-number');
-            let countdown = 5;
-    
-            countdownNumberEl.textContent = countdown;
-            const counter = setInterval(function() {
-                countdown--;
-                countdownNumberEl.textContent = countdown;
-                if (countdown < 1) {
-                    window.location = window.location.href.split(\"?\")[0];
-                    clearInterval(counter);
-                }
-            }, 1000);
-        </script>";
-    die;
+    include_once('./includes/redirect.php');
+    redirect('number.php');
 };
 ?>
 <div class="container text-end" dir="rtl">
