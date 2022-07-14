@@ -15,7 +15,7 @@
             • Dark color           => #001C00
         */
         body {
-            padding-top: 5rem;
+            /* padding-top: 2rem; */
         }
 
         /* Hide input Arrows */
@@ -39,22 +39,6 @@
             box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .btn-primary {
-            --bs-btn-color: #F8FFF8;
-            --bs-btn-bg: #9AE462;
-            --bs-btn-border-color: #9AE462;
-            --bs-btn-hover-color: #F8FFF8;
-            --bs-btn-hover-bg: #6BB535;
-            --bs-btn-hover-border-color: #005D00;
-            --bs-btn-focus-shadow-rgb: 49, 132, 253;
-            --bs-btn-active-color: #F8FFF8;
-            --bs-btn-active-bg: #005D00;
-            --bs-btn-active-border-color: #004F00;
-            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-            --bs-btn-disabled-color: #F8FFF8;
-            --bs-btn-disabled-bg: #9AE462;
-            --bs-btn-disabled-border-color: #9AE462;
-        }
 
         .btn:hover {
             transform: scale(1.025) translateY(-1px);
@@ -64,20 +48,6 @@
         .btn:active {
             transform: scale(0.975) translateY(1px);
             box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
-        }
-
-        .table-primary {
-            --bs-table-color: #001C00;
-            --bs-table-bg: #9AE462;
-            --bs-table-border-color: #3B8800;
-            --bs-table-striped-bg: #99a462;
-            --bs-table-striped-color: #001c00;
-            --bs-table-active-bg: #6BB535;
-            --bs-table-active-color: #001c00;
-            --bs-table-hover-bg: #3B8800;
-            --bs-table-hover-color: #001c00;
-            color: var(--bs-table-color);
-            border-color: var(--bs-table-border-color);
         }
 
         /* End Bootstrap Restyling */
