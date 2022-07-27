@@ -14,11 +14,11 @@ include_once "./includes/header.php";
                 </div>
                 <div class="mb-4">
                     <label for="loanAmount" class="form-label mb-2">Loan Amount</label>
-                    <input type="number" class="form-control form-outline" id="loanAmount" name="loanAmount" placeholder="Enter your Loan Amount" required value="<?= (int)$_POST['loanAmount'] ?? isset($_POST['loanAmount']) ?>" />
+                    <input type="number" class="form-control form-outline" id="loanAmount" name="loanAmount" placeholder="Enter your Loan Amount" required value="<?= isset($_POST['loanAmount']) ? (int)$_POST['loanAmount'] : '' ?>" />
                 </div>
                 <div class="mb-4">
                     <label for="loanYears" class="form-label mb-2">Loan Years</label>
-                    <input type="number" class="form-control form-outline" id="loanYears" name="loanYears" placeholder="Enter your Loan Years" required value="<?= (int)$_POST['loanYears'] ?? isset($_POST['loanYears']) ?>" />
+                    <input type="number" class="form-control form-outline" id="loanYears" name="loanYears" placeholder="Enter your Loan Years" required value="<?= isset($_POST['loanYears']) ? (int)$_POST['loanYears'] : '' ?>" />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
