@@ -37,7 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && empty($_POST)) {
                 <tfoot>
                     <tr class="table-primary">
                         <td>Total Price</td>
-                        <td colspan="4" class="text-end"><?= count($_POST['footbal']) * 300 + count($_POST['swimming']) * 250 + count($_POST['volleyball']) * 150 + count($_POST['others']) * 100 ?></td>
+                        <?php print_r($_POST) ?>
+                        <td colspan="4" class="text-end"><?= (isset($_POST['footbal']) ? count($_POST['footbal']) * 300 : 0) + (isset($_POST['swimming']) ? count($_POST['swimming']) * 250 : 0) + (isset($_POST['volleyball']) ? count($_POST['volleyball']) * 150 : 0) + (isset($_POST['others']) ? count($_POST['others']) * 100 : 0) ?></td>
                     </tr>
                 </tfoot>
             </table>
@@ -68,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && empty($_POST)) {
                 <tfoot>
                     <tr class="table-primary">
                         <td>Total price</td>
-                        <td><?= (count($_POST['footbal']) * 300) +  (count($_POST['swimming']) * 250) + (count($_POST['volleyball']) * 150) + (count($_POST['others']) * 100) + (count($_POST['member']) * 2500) + 10000 ?> LE</td>
+                        <td><?= (isset($_POST['footbal']) ? count($_POST['footbal']) * 300 : 0) + (isset($_POST['swimming']) ? count($_POST['swimming']) * 250 : 0) + (isset($_POST['volleyball']) ? count($_POST['volleyball']) * 150 : 0) + (isset($_POST['others']) ? count($_POST['others']) * 100 : 0) + (count($_POST['member']) * 2500) + 10000 ?> LE</td>
                     </tr>
                 </tfoot>
             </table>
