@@ -37,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && empty($_POST)) {
                 <tfoot>
                     <tr class="table-primary">
                         <td>Total Price</td>
-                        <?php print_r($_POST) ?>
                         <td colspan="4" class="text-end"><?= (isset($_POST['footbal']) ? count($_POST['footbal']) * 300 : 0) + (isset($_POST['swimming']) ? count($_POST['swimming']) * 250 : 0) + (isset($_POST['volleyball']) ? count($_POST['volleyball']) * 150 : 0) + (isset($_POST['others']) ? count($_POST['others']) * 100 : 0) ?></td>
                     </tr>
                 </tfoot>
