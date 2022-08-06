@@ -1,0 +1,30 @@
+.header-auth {
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  position: relative;
+  padding: 0px 0 0 63px;
+}
+.header-auth::after {
+  background: #000000 none repeat scroll 0 0;
+  content: "";
+  height: 15px;
+  left: 32px;
+  position: absolute;
+  top: 42%;
+  width: 1px;
+}
+.header-auth a {
+  color: #000;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  text-transform: capitalize;
+  transition: color 0.2s ease-in-out;
+}
+.header-auth a:hover {
+    color: #519f10;
+}
